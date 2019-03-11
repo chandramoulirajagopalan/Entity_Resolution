@@ -19,6 +19,13 @@ Libraries used json, csv, os and argparse
 ## [Deduplicate , linking and canonicalise data](https://github.com/chandramoulirajagopalan/Entity_Resolution/blob/master/Entity_Resolution_Using_Dedupe.py)
 Dedupe works by engaging the user in labeling the data via a command line interface, and using machine learning on the resulting training data to predict similar or matching records within unseen data.
 When comparing records, rather than treating each record as a single long string, Dedupe cleverly exploits the structure of the input data to instead compare the records field by field. The advantage of this approach is more pronounced when certain feature vectors of records are much more likely to assist in identifying matches than other attributes. Dedupe lets the user nominate the features they believe will be most useful.We can even make the model better by maximizing the F1 Score which balances both the precision and recall score. So by using F1 score we can tune both precision and recall.
+
+
+> precision = True Positive / ( Actual Results )
+> recall = True Positive / ( Predicted Results )
+> Accuracy = ( True Positive + True Negative ) / ( Total Results )
+> F1 = 2 * ( recall * precision ) / ( recall + precision )
+
 Libraries used - future, dedupe, os, csv, re, collections, argparse, numpy and unidecode.
 
 # Results
