@@ -43,14 +43,20 @@ if os.path.exists(settings_file):
 else:
     # Define Dedupe fields
     fields = [
-        {'field':'First Name + Last Name','type':'String'},
-        {'field':'Location','type':'String'},
-        {'field':'Organization','type':'String'},
+        {'field':'domain','type':'String'},
+        {'field':'id','type':'String'},
+        {'field':'link','type':'String'},
+        {'field':'link_type','type':'String'},
+        {'field':'rank','type':'String'},
+        {'field':'serp_id','type':'String'},
+        {'field':'snippet','type':'String'},
+        {'field':'title','type':'String'},
+        {'field':'visible_link','type':'String'},
     ]
     # Dedupe object
     deduper = dedupe.Dedupe(fields)
     # Dedupe train
-    deduper.sample(data_d,15000)
+    deduper.sample(data_d,1500)
     if os.path.exists(training_file):
         print('reading labeled examples from ', training_file)
         with open(training_file, 'rb') as f:
