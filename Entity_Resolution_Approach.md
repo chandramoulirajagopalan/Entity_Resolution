@@ -22,8 +22,11 @@ When comparing records, rather than treating each record as a single long string
 
 
 > precision = True Positive / ( Actual Results )
+
 > recall = True Positive / ( Predicted Results )
+
 > Accuracy = ( True Positive + True Negative ) / ( Total Results )
+
 > F1 = 2 * ( recall * precision ) / ( recall + precision )
 
 Libraries used - future, dedupe, os, csv, re, collections, argparse, numpy and unidecode.
