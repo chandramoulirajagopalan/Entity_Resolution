@@ -1,6 +1,7 @@
 import argparse
 import os
 import json
+import csv
 
 parser = argparser.ArgumentParser()
 parser.add_argument('-n','--first-last', help = "First Name and Last Name")
