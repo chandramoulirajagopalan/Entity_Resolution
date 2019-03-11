@@ -8,10 +8,10 @@ We have found various mentions of the entity in the web using two approaches
 - [Using Google Scrapper](https://pypi.org/project/GoogleScraper)
 - Using Dedupe library to deduplicate , link and canonicalise data.
 
-# [Using Google APP Engine API] (https://github.com/chandramoulirajagopalan/Entity_Resolution/blob/master/search_queries_using_google_api_engine.py)
+# [Using Google APP Engine API](https://github.com/chandramoulirajagopalan/Entity_Resolution/blob/master/search_queries_using_google_api_engine.py)
 We have used the query string from the input and made queries using the search method in the library. The output results are stored until we get to the end of the results. We use the library os, argparse and google.app.engine package for this job. Results are stored in a document file.
 
-# [Using Google Scrapper] (https://github.com/chandramoulirajagopalan/Entity_Resolution/blob/master/search_queries_google_scrapper.py)
+# [Using Google Scrapper](https://github.com/chandramoulirajagopalan/Entity_Resolution/blob/master/search_queries_google_scrapper.py)
 
 We have used the command line interface for the input from user using argparse. After securing the input we input it in a file and then use Google Scraper package to search for the queries and results are stored in a json file. Finally the json file is converted into csv file. The csv file is fed as an input for the deduplication process.
 Libraries used json, csv, os and argparse
