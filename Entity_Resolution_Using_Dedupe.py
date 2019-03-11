@@ -36,44 +36,45 @@ def readFile(filename):
 print("Importing Data ...")
 data_d = readFile(input_file)
 
+# Training
 if os.path.exists(settings_file):
     with open(settings_file,'rb') as f:
         dedupe = dedupe.StaticDupe(f)
 else:
+    # Define Dedupe fields
     fields = [
         {'field':'First Name + Last Name','type':'String'},
         {'field':'Location','type':'String'},
         {'field':'Organization','type':'String'},
     ]
+    # Dedupe object
     deduper = dedupe.Dedupe(fields)
+    # Dedupe train
     deduper.sample(data_d,15000)
     if os.path.exists(training_file):
         print('reading labeled examples from ', training_file)
         with open(training_file, 'rb') as f:
             deduper.readTraining(f)
-            
+    # Active Learning
     print('starting active labeling...')
 
     dedupe.consoleLabel(deduper)
 
     deduper.train()
-
+    # Write Training to disk
     with open(training_file, 'w') as tf :
         deduper.writeTraining(tf)
-
     with open(settings_file, 'wb') as sf :
         deduper.writeSettings(sf)
 
-print('blocking...')
-
-
+# Threshold score
 threshold = deduper.threshold(data_d, recall_weight=2)
-
+# records that match to same entities
 print('clustering...')
 clustered_dupes = deduper.match(data_d, threshold)
 
 print('# duplicate sets', len(clustered_dupes))
-
+# writing results
 cluster_membership = {}
 cluster_id = 0
 for (cluster_id, cluster) in enumerate(clustered_dupes):
