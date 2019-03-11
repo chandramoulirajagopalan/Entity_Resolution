@@ -3,9 +3,10 @@ Let us first consider what an entity is. Much as the key step in machine learnin
 
 # Approach
 We have created an interface to take input of the entity (First Name + LastName, Location, Organization) from the user through argparse.
-We have found various mentions of the entity in the web using two approaches
+We have found various mentions of the entity in the web using either of the two approaches for taking inputs from user
 - [Using Google APP Engine API](https://cloud.google.com/appengine/training/fts_intro/)
 - [Using Google Scrapper](https://pypi.org/project/GoogleScraper)
+We have to train the model and test it to analyse the entities.
 - Using Dedupe library to deduplicate , link and canonicalise data.
 
 ## [Using Google APP Engine API](https://github.com/chandramoulirajagopalan/Entity_Resolution/blob/master/search_queries_using_google_api_engine.py)
